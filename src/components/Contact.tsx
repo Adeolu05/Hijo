@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, AlertCircle, Instagram } from 'lucide-react';
 import Button from './ui/Button';
 
 const Contact: React.FC = () => {
@@ -63,8 +63,11 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      // Simulate form submission
-      alert('Thank you for your message. Our concierge team will respond shortly.');
+      // Create mailto link for direct emailing
+      const { name, email, subject, message } = formState;
+      const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+      window.location.href = `mailto:hijoluxwatches@gmail.com?subject=${encodeURIComponent(subject || 'Inquiry from Website')}&body=${body}`;
+
       setFormState({ name: '', email: '', subject: '', message: '' });
       setErrors({ name: '', email: '', message: '' });
     }
@@ -73,44 +76,53 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-5 h-5 text-gold-400" />,
-      title: "Concierge Email",
-      value: "concierge@hijo-timepieces.com",
-      link: "mailto:concierge@hijo-timepieces.com"
+      title: "Official Email",
+      value: "hijoluxwatches@gmail.com",
+      link: "mailto:hijoluxwatches@gmail.com"
     },
     {
       icon: <Phone className="w-5 h-5 text-gold-400" />,
-      title: "Private Line",
-      value: "+1 (888) 555-0123",
-      link: "tel:+18885550123"
+      title: "Phone",
+      value: "+234 813 063 4066, +971 52 232 6519",
+      link: "tel:+2348130634066"
     },
     {
       icon: <MapPin className="w-5 h-5 text-gold-400" />,
-      title: "Flagship Boutique",
-      value: "152 Bond Street, London, UK",
+      title: "Location",
+      value: "Lagos / Nigeria",
       link: "#"
+    },
+    {
+      icon: (
+        <div className="flex gap-2">
+          <Instagram className="w-5 h-5 text-gold-400" />
+        </div>
+      ),
+      title: "Instagram",
+      value: "@hijoluxwatches",
+      link: "https://instagram.com/hijoluxwatches"
     }
   ];
 
   const getInputClass = (error?: string) => {
-    return `w-full bg-white/5 border rounded-sm px-4 py-3 text-white focus:outline-none transition-colors placeholder-white/20 ${
-      error 
-        ? 'border-red-500/50 focus:border-red-500' 
-        : 'border-white/10 focus:border-gold-400/50'
-    }`;
+    return `w-full bg-white/5 border rounded-sm px-4 py-3 text-white focus:outline-none transition-colors placeholder-white/20 ${error
+      ? 'border-red-500/50 focus:border-red-500'
+      : 'border-white/10 focus:border-gold-400/50'
+      }`;
   };
 
   return (
     <section id="contact" className="py-24 bg-midnight-800 border-t border-white/5 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2000&auto=format&fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
-         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-gold-400/5 rounded-full blur-[100px]"></div>
-         <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px]"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=2000&auto=format&fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-gold-400/5 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-blue-900/10 rounded-full blur-[100px]"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16">
-          
+
           {/* Left Column: Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -123,7 +135,7 @@ const Contact: React.FC = () => {
               Begin Your <span className="italic text-white/50">Legacy</span>
             </h2>
             <p className="text-white/60 mb-12 leading-relaxed text-lg font-light max-w-md">
-              Looking for a specific model? Our network grants us access to the world's most elusive timepieces. Let our team assist you.
+              Looking for a specific model or interested in a trade-in? Our network grants us access to the world's most sought-after timepieces.
             </p>
 
             <div className="space-y-8">
@@ -165,12 +177,12 @@ const Contact: React.FC = () => {
                     placeholder="John Doe"
                   />
                   {errors.name && (
-                    <motion.p 
-                      initial={{ opacity: 0, y: -5 }} 
-                      animate={{ opacity: 1, y: 0 }} 
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
                       className="text-red-400 text-xs flex items-center gap-1"
                     >
-                      <AlertCircle size={12}/> {errors.name}
+                      <AlertCircle size={12} /> {errors.name}
                     </motion.p>
                   )}
                 </div>
@@ -186,12 +198,12 @@ const Contact: React.FC = () => {
                     placeholder="john@example.com"
                   />
                   {errors.email && (
-                    <motion.p 
-                      initial={{ opacity: 0, y: -5 }} 
-                      animate={{ opacity: 1, y: 0 }} 
+                    <motion.p
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
                       className="text-red-400 text-xs flex items-center gap-1"
                     >
-                      <AlertCircle size={12}/> {errors.email}
+                      <AlertCircle size={12} /> {errors.email}
                     </motion.p>
                   )}
                 </div>
@@ -222,12 +234,12 @@ const Contact: React.FC = () => {
                   placeholder="Tell us about the timepiece you desire..."
                 />
                 {errors.message && (
-                  <motion.p 
-                    initial={{ opacity: 0, y: -5 }} 
-                    animate={{ opacity: 1, y: 0 }} 
+                  <motion.p
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
                     className="text-red-400 text-xs flex items-center gap-1"
                   >
-                    <AlertCircle size={12}/> {errors.message}
+                    <AlertCircle size={12} /> {errors.message}
                   </motion.p>
                 )}
               </div>

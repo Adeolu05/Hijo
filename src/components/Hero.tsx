@@ -26,18 +26,18 @@ const Hero: React.FC<HeroProps> = ({ onExplore }) => {
           className="space-y-8 text-center lg:text-left"
         >
           <div className="inline-block px-4 py-1.5 border border-white/10 rounded-full bg-white/5 backdrop-blur-md">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-gold-400">Purveyors of Fine Horology</span>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-gold-400">Trusted Luxury Watch Dealer</span>
           </div>
-          
+
           <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight">
-            <span className="block text-white">Curated Luxury.</span>
+            <span className="block text-white">HIJO LUXWATCHES.</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-white/60">
-              Global Excellence.
+              Multi Services.
             </span>
           </h1>
 
           <p className="text-white/60 text-lg md:text-xl font-light max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            Your premier destination for the world's most sought-after timepieces. We source, verify, and deliver excellence to your wrist.
+            We are a trusted watch dealer specializing in authentic luxury, vintage, and modern timepieces. Our mission is to provide customers with genuine, high-quality watches at competitive prices, backed by honesty and professionalism.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -52,16 +52,16 @@ const Hero: React.FC<HeroProps> = ({ onExplore }) => {
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           className="relative flex justify-center items-center"
         >
-           {/* Decorative circle behind watch */}
-          <motion.div 
+          {/* Decorative circle behind watch */}
+          <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] border border-white/5 rounded-full border-dashed"
           />
-          <motion.div 
-             animate={{ rotate: -360 }}
-             transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-             className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] border border-white/5 rounded-full"
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+            className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] border border-white/5 rounded-full"
           />
 
           <motion.img
@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ onExplore }) => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}

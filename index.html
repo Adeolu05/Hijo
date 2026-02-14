@@ -1,60 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hijo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              gold: {
-                400: '#D4AF37',
-                500: '#C5A028',
-                600: '#B08D1E',
-              },
-              midnight: {
-                900: '#050505',
-                800: '#0A0A0A',
-                700: '#121212',
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIJO LUXWATCHES MULTI SERVICES | Luxury Timepieces</title>
+  <link rel="icon" type="image/jpeg" href="/image/hijo.jpg" />
+
+  <!-- SEO & Metadata -->
+  <meta name="description"
+    content="HIJO LUXWATCHES MULTI SERVICES - Trusted dealer in authentic luxury, vintage, and modern timepieces. We verify, trade, and ship worldwide from Lagos, Nigeria." />
+  <meta name="keywords"
+    content="luxury watches, authentic timepieces, vintage watches, Lagos watch dealer, Rolex, Patek Philippe, Audemars Piguet, Hijo Luxwatches" />
+  <meta name="author" content="HIJO LUXWATCHES MULTI SERVICES" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hijoluxwatches.com/" />
+  <meta property="og:title" content="HIJO LUXWATCHES MULTI SERVICES | Luxury Timepieces" />
+  <meta property="og:description"
+    content="Trusted dealer in authentic luxury, vintage, and modern timepieces. Sourcing excellence for discerning collectors." />
+  <meta property="og:image" content="/image/hijo.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://hijoluxwatches.com/" />
+  <meta property="twitter:title" content="HIJO LUXWATCHES MULTI SERVICES | Luxury Timepieces" />
+  <meta property="twitter:description"
+    content="Trusted dealer in authentic luxury, vintage, and modern timepieces. Sourcing excellence for discerning collectors." />
+  <meta property="twitter:image" content="/image/hijo.jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              400: '#D4AF37',
+              500: '#C5A028',
+              600: '#B08D1E',
             },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            backgroundImage: {
-              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            midnight: {
+              900: '#050505',
+              800: '#0A0A0A',
+              700: '#121212',
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #050505;
-        color: #F3F4F6;
-      }
-      /* Custom scrollbar for Webkit */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #050505;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #333;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050505;
+      color: #F3F4F6;
+    }
+
+    /* Custom scrollbar for Webkit */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #050505;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -69,8 +100,10 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+
 </html>
